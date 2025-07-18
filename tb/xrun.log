@@ -1,5 +1,5 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jul 18, 2025 at 15:56:46 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jul 18, 2025 at 20:18:07 PKT
 xrun
 	-f file.f
 		-64
@@ -196,54 +196,9 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-DEFINE std       ./STD
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
-DEFINE synopsys  ./SYNOPSYS
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
-DEFINE ieee      ./IEEE
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/IEEE' (cds.lib command ignored).
-DEFINE ambit     ./AMBIT
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/AMBIT' (cds.lib command ignored).
-DEFINE vital_memory ./VITAL_MEMORY
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
-DEFINE ncutils ./NCUTILS
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCUTILS' (cds.lib command ignored).
-DEFINE ncinternal ./NCINTERNAL
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
-DEFINE ncmodels ./NCMODELS
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCMODELS' (cds.lib command ignored).
-DEFINE xmutils ./XMUTILS
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMUTILS' (cds.lib command ignored).
-DEFINE xminternal ./XMINTERNAL
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
-DEFINE xmmodels ./XMMODELS
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMMODELS' (cds.lib command ignored).
-DEFINE cds_assertions ./CDS_ASSERTIONS
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
-DEFINE cds_inhconn ./CDS_INHCONN
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
-DEFINE cds_spicelib ./CDS_SPICELIB
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
-DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
-|
-xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file '../master/master_driver.sv' is newer than expected.
-	expected: Fri Jul 18 15:16:19 2025
-	actual:   Fri Jul 18 15:49:33 2025
+Recompiling... reason: file './apb_tb.sv' is newer than expected.
+	expected: Fri Jul 18 20:16:35 2025
+	actual:   Fri Jul 18 20:18:04 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -577,10 +532,8 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.master_top:sv <0x295470ad>
-			streams:  49, words: 36688
-		worklib.master_interface:sv <0x3f291b7f>
-			streams: 502, words: 565900
+		worklib.master_top:sv <0x2b66b06f>
+			streams:  50, words: 39778
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -588,7 +541,7 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15):
 		Modules:                       1       1
 		Interfaces:                    1       1
 		Verilog packages:              5       5
-		Registers:                 13982   10196
+		Registers:                 13986   10201
 		Scalar wires:                  2       -
 		Named events:                  4      12
 		Always blocks:                 1       1
@@ -694,23 +647,23 @@ uvm_test_top                 master_test             -     @2638
 
 UVM_INFO master_test_lib.sv(25) @ 0: uvm_test_top [master_test] Elaboration phase : MASTER TeSt
 UVM_INFO ../master/master_driver.sv(23) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver] Running Simulation: MASTER Driver
-UVM_INFO ../master/master_monitor.sv(29) @ 0: uvm_test_top.tb.m_env.agent.monitor [MASTER_MONITOR] Simulation started
+UVM_INFO ../master/master_monitor.sv(36) @ 0: uvm_test_top.tb.m_env.agent.monitor [MASTER_MONITOR] Simulation started
 UVM_INFO ../master/master_sequencer.sv(11) @ 0: uvm_test_top.tb.m_env.agent.sequencer [master_sequencer] Running Simulation : MASTER SEQUENCER
 UVM_INFO ../master/master_env.sv(21) @ 0: uvm_test_top.tb.m_env [master_env] Running Simulation : MASTER ENVIRONMENT
-UVM_INFO apb_tb.sv(17) @ 0: uvm_test_top.tb [apb_tb] Running Simulation : MASTER ENVIRONMENT
+UVM_INFO apb_tb.sv(23) @ 0: uvm_test_top.tb [apb_tb] Running Simulation : MASTER ENVIRONMENT
 UVM_INFO master_test_lib.sv(19) @ 0: uvm_test_top [master_test] Running Simulation : MASTER Test
 UVM_INFO ../master/master_monitor.sv(22) @ 0: uvm_test_top.tb.m_env.agent.monitor [MASTER_MONITOR] Run Phase started
 UVM_INFO ../master/master_driver.sv(32) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
-UVM_INFO ../master/master_driver.sv(34) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
+UVM_INFO ../master/master_driver.sv(35) @ 25: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3699                                         
+req                            master_packet  -     @3706                                         
   PADDR                        integral       32    'hacb0c2cc                                    
   PWDATA                       integral       32    'h66250d2                                     
-  PWRITE                       integral       1     'h0                                           
+  PWRITE                       integral       1     'h1                                           
   PPROT                        integral       3     'h0                                           
-  PSEL                         integral       1     'h0                                           
+  PSEL                         integral       1     'h1                                           
   PENABLE                      integral       1     'h0                                           
   PSTRB                        integral       4     'h0                                           
   PWAKEUP                      integral       1     'h0                                           
@@ -724,104 +677,212 @@ req                            master_packet  -     @3699
   sequencer                    string         37    uvm_test_top.tb.m_env.agent.sequencer         
 --------------------------------------------------------------------------------------------------
 
-UVM_INFO ../master/master_driver.sv(32) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
-UVM_INFO ../master/master_driver.sv(34) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
+UVM_INFO ../master/master_monitor.sv(27) @ 25: uvm_test_top.tb.m_env.agent.monitor [master_monitor] [25] Monitor Packet: 
+-------------------------------------
+Name       Type           Size  Value
+-------------------------------------
+mpkt       master_packet  -     @3699
+  PADDR    integral       32    'h0  
+  PWDATA   integral       32    'h0  
+  PWRITE   integral       1     'h1  
+  PPROT    integral       3     'h0  
+  PSEL     integral       1     'h0  
+  PENABLE  integral       1     'h1  
+  PSTRB    integral       4     'h0  
+  PWAKEUP  integral       1     'h0  
+  PRDATA   integral       32    'h0  
+  PREADY   integral       1     'h0  
+  PSLVERR  integral       1     'h0  
+-------------------------------------
+
+UVM_INFO ../master/master_driver.sv(32) @ 25: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
+UVM_INFO ../master/master_monitor.sv(27) @ 55: uvm_test_top.tb.m_env.agent.monitor [master_monitor] [55] Monitor Packet: 
+------------------------------------------
+Name       Type           Size  Value     
+------------------------------------------
+mpkt       master_packet  -     @3744     
+  PADDR    integral       32    'hacb0c2cc
+  PWDATA   integral       32    'h66250d2 
+  PWRITE   integral       1     'h1       
+  PPROT    integral       3     'h0       
+  PSEL     integral       1     'h1       
+  PENABLE  integral       1     'h1       
+  PSTRB    integral       4     'h0       
+  PWAKEUP  integral       1     'h0       
+  PRDATA   integral       32    'h0       
+  PREADY   integral       1     'h1       
+  PSLVERR  integral       1     'h0       
+------------------------------------------
+
+UVM_INFO ../master/master_driver.sv(35) @ 55: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3790                                         
+req                            master_packet  -     @3751                                         
   PADDR                        integral       32    'h67b9c3da                                    
   PWDATA                       integral       32    'hbffc15b5                                    
-  PWRITE                       integral       1     'h0                                           
+  PWRITE                       integral       1     'h1                                           
   PPROT                        integral       3     'h0                                           
-  PSEL                         integral       1     'h0                                           
+  PSEL                         integral       1     'h1                                           
   PENABLE                      integral       1     'h0                                           
   PSTRB                        integral       4     'h0                                           
   PWAKEUP                      integral       1     'h0                                           
   PRDATA                       integral       32    'h0                                           
   PREADY                       integral       1     'h0                                           
   PSLVERR                      integral       1     'h0                                           
-  begin_time                   time           64    0                                             
+  begin_time                   time           64    25                                            
   depth                        int            32    'd2                                           
   parent sequence (name)       string         8     test_seq                                      
   parent sequence (full name)  string         46    uvm_test_top.tb.m_env.agent.sequencer.test_seq
   sequencer                    string         37    uvm_test_top.tb.m_env.agent.sequencer         
 --------------------------------------------------------------------------------------------------
 
-UVM_INFO ../master/master_driver.sv(32) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
-UVM_INFO ../master/master_driver.sv(34) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
+UVM_INFO ../master/master_driver.sv(32) @ 55: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
+UVM_INFO ../master/master_monitor.sv(27) @ 85: uvm_test_top.tb.m_env.agent.monitor [master_monitor] [85] Monitor Packet: 
+------------------------------------------
+Name       Type           Size  Value     
+------------------------------------------
+mpkt       master_packet  -     @3736     
+  PADDR    integral       32    'h67b9c3da
+  PWDATA   integral       32    'hbffc15b5
+  PWRITE   integral       1     'h1       
+  PPROT    integral       3     'h0       
+  PSEL     integral       1     'h1       
+  PENABLE  integral       1     'h1       
+  PSTRB    integral       4     'h0       
+  PWAKEUP  integral       1     'h0       
+  PRDATA   integral       32    'h0       
+  PREADY   integral       1     'h1       
+  PSLVERR  integral       1     'h0       
+------------------------------------------
+
+UVM_INFO ../master/master_driver.sv(35) @ 85: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3803                                         
+req                            master_packet  -     @3799                                         
   PADDR                        integral       32    'hc1189aa1                                    
   PWDATA                       integral       32    'hdaddab4d                                    
-  PWRITE                       integral       1     'h0                                           
+  PWRITE                       integral       1     'h1                                           
   PPROT                        integral       3     'h0                                           
-  PSEL                         integral       1     'h0                                           
+  PSEL                         integral       1     'h1                                           
   PENABLE                      integral       1     'h0                                           
   PSTRB                        integral       4     'h0                                           
   PWAKEUP                      integral       1     'h0                                           
   PRDATA                       integral       32    'h0                                           
   PREADY                       integral       1     'h0                                           
   PSLVERR                      integral       1     'h0                                           
-  begin_time                   time           64    0                                             
+  begin_time                   time           64    55                                            
   depth                        int            32    'd2                                           
   parent sequence (name)       string         8     test_seq                                      
   parent sequence (full name)  string         46    uvm_test_top.tb.m_env.agent.sequencer.test_seq
   sequencer                    string         37    uvm_test_top.tb.m_env.agent.sequencer         
 --------------------------------------------------------------------------------------------------
 
-UVM_INFO ../master/master_driver.sv(32) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
-UVM_INFO ../master/master_driver.sv(34) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
---------------------------------------------------------------------------------------------------
-Name                           Type           Size  Value                                         
---------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3765                                         
-  PADDR                        integral       32    'hb8cd4723                                    
-  PWDATA                       integral       32    'h5707119a                                    
-  PWRITE                       integral       1     'h0                                           
-  PPROT                        integral       3     'h0                                           
-  PSEL                         integral       1     'h0                                           
-  PENABLE                      integral       1     'h0                                           
-  PSTRB                        integral       4     'h0                                           
-  PWAKEUP                      integral       1     'h0                                           
-  PRDATA                       integral       32    'h0                                           
-  PREADY                       integral       1     'h0                                           
-  PSLVERR                      integral       1     'h0                                           
-  begin_time                   time           64    0                                             
-  depth                        int            32    'd2                                           
-  parent sequence (name)       string         8     test_seq                                      
-  parent sequence (full name)  string         46    uvm_test_top.tb.m_env.agent.sequencer.test_seq
-  sequencer                    string         37    uvm_test_top.tb.m_env.agent.sequencer         
---------------------------------------------------------------------------------------------------
+UVM_INFO ../master/master_driver.sv(32) @ 85: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
+UVM_INFO ../master/master_monitor.sv(27) @ 115: uvm_test_top.tb.m_env.agent.monitor [master_monitor] [115] Monitor Packet: 
+------------------------------------------
+Name       Type           Size  Value     
+------------------------------------------
+mpkt       master_packet  -     @3670     
+  PADDR    integral       32    'hc1189aa1
+  PWDATA   integral       32    'hdaddab4d
+  PWRITE   integral       1     'h1       
+  PPROT    integral       3     'h0       
+  PSEL     integral       1     'h1       
+  PENABLE  integral       1     'h1       
+  PSTRB    integral       4     'h0       
+  PWAKEUP  integral       1     'h0       
+  PRDATA   integral       32    'h0       
+  PREADY   integral       1     'h1       
+  PSLVERR  integral       1     'h0       
+------------------------------------------
 
-UVM_INFO ../master/master_driver.sv(32) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
-UVM_INFO ../master/master_driver.sv(34) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
+UVM_INFO ../master/master_driver.sv(35) @ 115: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
 req                            master_packet  -     @3789                                         
-  PADDR                        integral       32    'h9b6d488c                                    
-  PWDATA                       integral       32    'h3478489c                                    
-  PWRITE                       integral       1     'h0                                           
+  PADDR                        integral       32    'hb8cd4723                                    
+  PWDATA                       integral       32    'h5707119a                                    
+  PWRITE                       integral       1     'h1                                           
   PPROT                        integral       3     'h0                                           
-  PSEL                         integral       1     'h0                                           
+  PSEL                         integral       1     'h1                                           
   PENABLE                      integral       1     'h0                                           
   PSTRB                        integral       4     'h0                                           
   PWAKEUP                      integral       1     'h0                                           
   PRDATA                       integral       32    'h0                                           
   PREADY                       integral       1     'h0                                           
   PSLVERR                      integral       1     'h0                                           
-  begin_time                   time           64    0                                             
+  begin_time                   time           64    85                                            
   depth                        int            32    'd2                                           
   parent sequence (name)       string         8     test_seq                                      
   parent sequence (full name)  string         46    uvm_test_top.tb.m_env.agent.sequencer.test_seq
   sequencer                    string         37    uvm_test_top.tb.m_env.agent.sequencer         
 --------------------------------------------------------------------------------------------------
 
-UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ../master/master_driver.sv(41) @ 0: uvm_test_top.tb.m_env.agent.driver [master_driver] Master driver simulation complete
+UVM_INFO ../master/master_driver.sv(32) @ 115: uvm_test_top.tb.m_env.agent.driver [master_driver]  Driver Run Phase
+UVM_INFO ../master/master_monitor.sv(27) @ 145: uvm_test_top.tb.m_env.agent.monitor [master_monitor] [145] Monitor Packet: 
+------------------------------------------
+Name       Type           Size  Value     
+------------------------------------------
+mpkt       master_packet  -     @3755     
+  PADDR    integral       32    'hb8cd4723
+  PWDATA   integral       32    'h5707119a
+  PWRITE   integral       1     'h1       
+  PPROT    integral       3     'h0       
+  PSEL     integral       1     'h1       
+  PENABLE  integral       1     'h1       
+  PSTRB    integral       4     'h0       
+  PWAKEUP  integral       1     'h0       
+  PRDATA   integral       32    'h0       
+  PREADY   integral       1     'h1       
+  PSLVERR  integral       1     'h0       
+------------------------------------------
+
+UVM_INFO ../master/master_driver.sv(35) @ 145: uvm_test_top.tb.m_env.agent.driver [master_driver] APB Packet: 
+--------------------------------------------------------------------------------------------------
+Name                           Type           Size  Value                                         
+--------------------------------------------------------------------------------------------------
+req                            master_packet  -     @3791                                         
+  PADDR                        integral       32    'h9b6d488c                                    
+  PWDATA                       integral       32    'h3478489c                                    
+  PWRITE                       integral       1     'h1                                           
+  PPROT                        integral       3     'h0                                           
+  PSEL                         integral       1     'h1                                           
+  PENABLE                      integral       1     'h0                                           
+  PSTRB                        integral       4     'h0                                           
+  PWAKEUP                      integral       1     'h0                                           
+  PRDATA                       integral       32    'h0                                           
+  PREADY                       integral       1     'h0                                           
+  PSLVERR                      integral       1     'h0                                           
+  begin_time                   time           64    115                                           
+  depth                        int            32    'd2                                           
+  parent sequence (name)       string         8     test_seq                                      
+  parent sequence (full name)  string         46    uvm_test_top.tb.m_env.agent.sequencer.test_seq
+  sequencer                    string         37    uvm_test_top.tb.m_env.agent.sequencer         
+--------------------------------------------------------------------------------------------------
+
+UVM_INFO ../master/master_monitor.sv(27) @ 175: uvm_test_top.tb.m_env.agent.monitor [master_monitor] [175] Monitor Packet: 
+------------------------------------------
+Name       Type           Size  Value     
+------------------------------------------
+mpkt       master_packet  -     @3811     
+  PADDR    integral       32    'h9b6d488c
+  PWDATA   integral       32    'h3478489c
+  PWRITE   integral       1     'h1       
+  PPROT    integral       3     'h0       
+  PSEL     integral       1     'h1       
+  PENABLE  integral       1     'h0       
+  PSTRB    integral       4     'h0       
+  PWAKEUP  integral       1     'h0       
+  PRDATA   integral       32    'h0       
+  PREADY   integral       1     'h1       
+  PSLVERR  integral       1     'h0       
+------------------------------------------
+
+UVM_INFO /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 200: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../master/master_driver.sv(42) @ 200: uvm_test_top.tb.m_env.agent.driver [master_driver] Master driver simulation complete
 
 --- UVM Report catcher Summary ---
 
@@ -836,7 +897,7 @@ Number of caught UVM_WARNING reports :    0
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   23
+UVM_INFO :   29
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
@@ -848,9 +909,10 @@ UVM_FATAL :    0
 [apb_tb]     1
 [master_driver]    13
 [master_env]     1
+[master_monitor]     6
 [master_sequencer]     1
 [master_test]     2
-Simulation complete via $finish(1) at time 0 FS + 184
+Simulation complete via $finish(1) at time 200 NS + 45
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.09-s006: Exiting on Jul 18, 2025 at 15:56:48 PKT  (total: 00:00:02)
+TOOL:	xrun(64)	23.09-s006: Exiting on Jul 18, 2025 at 20:18:08 PKT  (total: 00:00:01)

@@ -28,11 +28,11 @@ class master_driver extends uvm_driver #(master_packet);
   task run_phase(uvm_phase phase);
         // master_packet pkt;
         forever begin
-        seq_item_port.get_next_item(req);
-        `uvm_info(get_type_name, " Driver Run Phase", UVM_HIGH)
-        
-        seq_item_port.item_done();
-        `uvm_info(get_type_name(), $sformatf("APB Packet: \n%s", req.sprint()), UVM_MEDIUM)
+            seq_item_port.get_next_item(req);
+            `uvm_info(get_type_name, " Driver Run Phase", UVM_HIGH)
+            send_to_slave(req);
+            seq_item_port.item_done();
+            `uvm_info(get_type_name(), $sformatf("APB Packet: \n%s", req.sprint()), UVM_MEDIUM)
         end
 endtask
 
@@ -41,5 +41,25 @@ endtask
     function void report_phase(uvm_phase phase);
         `uvm_info(get_type_name(), "Master driver simulation complete", UVM_LOW)
     endfunction
+
+    task send_to_slave(master_packet req);
+        @(posedge mif.PCLK);
+        req.PSEL = 1'b1;
+        mif.PWRITE = req.PWRITE;
+        mif.PSEL <= req.PSEL;
+        mif.PADDR <= req.PADDR;
+        mif.PWDATA <= req.PWDATA;
+       
+        if(mif.PWRITE) begin
+            do begin
+                //  @(posedge mif.PCLK);
+                @(posedge mif.PCLK);
+                 mif.PENABLE <= 1'b1;
+                 mif.PREADY <= 1'b1;
+            end while(!mif.PREADY);
+            @(posedge mif.PCLK);
+            mif.PENABLE <= 1'b0;
+        end
+    endtask
 
 endclass

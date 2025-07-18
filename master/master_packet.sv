@@ -3,7 +3,7 @@ class master_packet extends uvm_sequence_item ;
     parameter DATA_WIDTH = 32;
     rand bit [DATA_WIDTH-1:0]   PWDATA;
     rand bit [DATA_WIDTH-1:0]   PADDR;
-    bit                         PWRITE;
+    rand bit                    PWRITE;
     bit [2:0]                   PPROT;     // Protection attributes
     bit                         PSEL;     // Select slave
     bit                         PENABLE; 

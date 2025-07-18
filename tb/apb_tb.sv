@@ -7,6 +7,12 @@ class apb_tb extends uvm_env;
 
     master_env m_env;
 
+    task run_phase(uvm_phase phase);
+        phase.raise_objection(this, "Starting Sequence....");
+        #200ns;
+        phase.drop_objection(this, "sequence complete");
+    endtask
+
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         m_env = master_env::type_id::create("m_env", this);
