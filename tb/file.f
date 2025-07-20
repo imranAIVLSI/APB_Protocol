@@ -6,9 +6,12 @@
 // include directories
 //*** add incdir include directories here
 -incdir ../master // include directory for sv files
+-incdir ../slave
 -incdir ../tb // include directory for sv files
+-incdir ../interface
 ../master/master_pkg.sv
-../master/master_interface.sv
+../slave/slave_pkg.sv
+../interface/apb_interface.sv
 // ../tb/master_test.sv
 ../tb/master_top.sv
 

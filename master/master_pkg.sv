@@ -1,7 +1,7 @@
 package master_pkg;
    import uvm_pkg::*;
     `include "uvm_macros.svh"
-    typedef uvm_config_db #(virtual master_interface) master_mif_config;
+    typedef uvm_config_db #(virtual apb_interface) master_mif_config;
     
     `include "master_packet.sv"
     `include "master_monitor.sv"

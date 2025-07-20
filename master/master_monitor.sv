@@ -1,7 +1,7 @@
 class master_monitor extends uvm_monitor;
     `uvm_component_utils(master_monitor)
 
-    virtual master_interface mif;
+    virtual apb_interface mif;
 
     function new (string name, uvm_component parent);
         super.new(name , parent);
@@ -11,7 +11,7 @@ class master_monitor extends uvm_monitor;
 //------------------------------------------------------------------------------------------------------ 
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        if (!uvm_config_db #(virtual master_interface)::get(this, "", "mif", mif)) begin
+        if (!uvm_config_db #(virtual apb_interface)::get(this, "", "mif", mif)) begin
             `uvm_fatal("NOCONFIG", "No master_interface configured for the monitor")
         end
     endfunction

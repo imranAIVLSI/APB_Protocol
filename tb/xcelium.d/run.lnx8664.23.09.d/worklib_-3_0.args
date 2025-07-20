@@ -6,7 +6,11 @@
 -INCDIR
 ../master
 -INCDIR
+../slave
+-INCDIR
 ../tb
+-INCDIR
+../interface
 -I_INCDIR
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src
 -DEFINE

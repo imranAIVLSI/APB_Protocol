@@ -3,14 +3,16 @@ module master_top;
     `include "uvm_macros.svh"
 
     import master_pkg::*;
+    import slave_pkg::*;
     `include "apb_tb.sv"
     `include "master_test_lib.sv"
 
     bit clk = 0;
     always #5 clk = ~clk;
-    master_interface mif(.PCLK(clk), .PRESET(1'b1));
+    apb_interface mif(.PCLK(clk), .PRESET(1'b1));
     initial begin
         master_mif_config::set(null, "*", "mif", mif);
+        slave_sif_config::set(null, "*", "sif", mif);
         run_test();
     end
 endmodule 

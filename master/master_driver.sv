@@ -1,5 +1,5 @@
 class master_driver extends uvm_driver #(master_packet);
-    virtual interface master_interface mif; 
+    virtual interface apb_interface mif; 
     `uvm_component_utils(master_driver)
 
     function new(string name = "master_driver", uvm_component parent);
@@ -13,7 +13,7 @@ class master_driver extends uvm_driver #(master_packet);
         super.build_phase(phase);
         if(!master_mif_config::get(this, "", "mif", mif))
             `uvm_fatal("NOVIF", "VIF not get for Driver")
-        super.build_phase(phase);
+        // super.build_phase(phase);
     endfunction
 
 // ========================================= START OF SIMULATION PHASE =================================

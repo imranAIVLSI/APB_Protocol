@@ -1,17 +1,19 @@
 xrun(64): 23.09-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.09-s006: Started on Jul 18, 2025 at 20:18:07 PKT
+TOOL:	xrun(64)	23.09-s006: Started on Jul 19, 2025 at 19:28:11 PKT
 xrun
 	-f file.f
 		-64
 		-uvmhome /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d
 		-incdir ../master
+		-incdir ../slave
 		-incdir ../tb
+		-incdir ../interface
 		../master/master_pkg.sv
-		../master/master_interface.sv
+		../slave/slave_pkg.sv
+		../interface/apb_interface.sv
 		../tb/master_top.sv
 		+UVM_TESTNAME=master_test
 		+UVM_VERBOSITY=UVM_HIGH
-	-access rwc
 
    User defined plus("+") options:
 	+UVM_VERBOSITY=UVM_HIGH
@@ -196,9 +198,6 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Recompiling... reason: file './apb_tb.sv' is newer than expected.
-	expected: Fri Jul 18 20:16:35 2025
-	actual:   Fri Jul 18 20:18:04 2025
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -244,7 +243,6 @@ xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d
 DEFINE std       ./STD
 |
 xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -290,57 +288,16 @@ xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cd
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-DEFINE std       ./STD
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
-DEFINE synopsys  ./SYNOPSYS
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
-DEFINE ieee      ./IEEE
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/IEEE' (cds.lib command ignored).
-DEFINE ambit     ./AMBIT
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/AMBIT' (cds.lib command ignored).
-DEFINE vital_memory ./VITAL_MEMORY
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
-DEFINE ncutils ./NCUTILS
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCUTILS' (cds.lib command ignored).
-DEFINE ncinternal ./NCINTERNAL
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
-DEFINE ncmodels ./NCMODELS
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/NCMODELS' (cds.lib command ignored).
-DEFINE xmutils ./XMUTILS
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMUTILS' (cds.lib command ignored).
-DEFINE xminternal ./XMINTERNAL
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
-DEFINE xmmodels ./XMMODELS
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/XMMODELS' (cds.lib command ignored).
-DEFINE cds_assertions ./CDS_ASSERTIONS
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
-DEFINE cds_inhconn ./CDS_INHCONN
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
-DEFINE cds_spicelib ./CDS_SPICELIB
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
-DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
-|
-xmvlog: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+file: ../slave/slave_pkg.sv
+	package worklib.slave_pkg:sv
+		errors: 0, warnings: 0
 file: ../tb/master_top.sv
 	module worklib.master_top:sv
 		errors: 0, warnings: 0
 xmvlog: *W,SPDUSD: Include directory ../tb given but not used.
+xmvlog: *W,SPDUSD: Include directory ../interface given but not used.
 	Total errors/warnings found outside modules and primitives:
-		errors: 0, warnings: 16
+		errors: 0, warnings: 17
 DEFINE std       ./STD
 |
 xrun: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/STD' (cds.lib command ignored).
@@ -484,6 +441,7 @@ xmelab: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cd
 		cdns_assert2uvm_pkg
 		cdns_uvm_pkg
 		master_pkg
+		slave_pkg
 		master_top
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
@@ -532,25 +490,29 @@ xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,14):
 DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
 |
 xmvlog_cg: *W,DLCPTH (/home/cc/mnt/XCELIUM2309/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/home/cc/mnt/XCELIUM2309/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
-		worklib.master_top:sv <0x2b66b06f>
-			streams:  50, words: 39778
+		worklib.master_top:sv <0x135ba2d8>
+			streams:  49, words: 39304
+		worklib.slave_pkg:sv <0x33069a15>
+			streams: 386, words: 409705
+		worklib.apb_interface:sv <0x59b5b28f>
+			streams: 511, words: 575386
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                       Instances  Unique
 		Modules:                       1       1
 		Interfaces:                    1       1
-		Verilog packages:              5       5
-		Registers:                 13986   10201
+		Verilog packages:              6       6
+		Registers:                 14548   10294
 		Scalar wires:                  2       -
 		Named events:                  4      12
 		Always blocks:                 1       1
-		Initial blocks:              286     156
+		Initial blocks:              308     162
 		Parallel blocks:              26      27
-		Pseudo assignments:            2       -
+		Pseudo assignments:            1       -
 		Assertions:                    2       2
-		SV Class declarations:       199     313
-		SV Class specializations:    382     382
+		SV Class declarations:       205     319
+		SV Class specializations:    414     414
 	Writing initial simulation snapshot: worklib.master_top:sv
 DEFINE std       ./STD
 |
@@ -628,17 +590,17 @@ UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 ----------------------------------------------------------------
 Name                         Type                    Size  Value
 ----------------------------------------------------------------
-uvm_test_top                 master_test             -     @2638
-  tb                         apb_tb                  -     @2697
-    m_env                    master_env              -     @2740
-      agent                  master_agent            -     @2771
-        driver               master_driver           -     @3472
-          rsp_port           uvm_analysis_port       -     @3571
-          seq_item_port      uvm_seq_item_pull_port  -     @3522
-        monitor              master_monitor          -     @2803
-        sequencer            master_sequencer        -     @2833
-          rsp_export         uvm_analysis_export     -     @2891
-          seq_item_export    uvm_seq_item_pull_imp   -     @3441
+uvm_test_top                 master_test             -     @2636
+  tb                         apb_tb                  -     @2695
+    m_env                    master_env              -     @2738
+      agent                  master_agent            -     @2769
+        driver               master_driver           -     @3470
+          rsp_port           uvm_analysis_port       -     @3569
+          seq_item_port      uvm_seq_item_pull_port  -     @3520
+        monitor              master_monitor          -     @2801
+        sequencer            master_sequencer        -     @2831
+          rsp_export         uvm_analysis_export     -     @2889
+          seq_item_export    uvm_seq_item_pull_imp   -     @3439
           arbitration_queue  array                   0     -    
           lock_queue         array                   0     -    
           num_last_reqs      integral                32    'd1  
@@ -658,7 +620,7 @@ UVM_INFO ../master/master_driver.sv(35) @ 25: uvm_test_top.tb.m_env.agent.driver
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3706                                         
+req                            master_packet  -     @3704                                         
   PADDR                        integral       32    'hacb0c2cc                                    
   PWDATA                       integral       32    'h66250d2                                     
   PWRITE                       integral       1     'h1                                           
@@ -681,7 +643,7 @@ UVM_INFO ../master/master_monitor.sv(27) @ 25: uvm_test_top.tb.m_env.agent.monit
 -------------------------------------
 Name       Type           Size  Value
 -------------------------------------
-mpkt       master_packet  -     @3699
+mpkt       master_packet  -     @3697
   PADDR    integral       32    'h0  
   PWDATA   integral       32    'h0  
   PWRITE   integral       1     'h1  
@@ -700,7 +662,7 @@ UVM_INFO ../master/master_monitor.sv(27) @ 55: uvm_test_top.tb.m_env.agent.monit
 ------------------------------------------
 Name       Type           Size  Value     
 ------------------------------------------
-mpkt       master_packet  -     @3744     
+mpkt       master_packet  -     @3741     
   PADDR    integral       32    'hacb0c2cc
   PWDATA   integral       32    'h66250d2 
   PWRITE   integral       1     'h1       
@@ -718,7 +680,7 @@ UVM_INFO ../master/master_driver.sv(35) @ 55: uvm_test_top.tb.m_env.agent.driver
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3751                                         
+req                            master_packet  -     @3748                                         
   PADDR                        integral       32    'h67b9c3da                                    
   PWDATA                       integral       32    'hbffc15b5                                    
   PWRITE                       integral       1     'h1                                           
@@ -742,7 +704,7 @@ UVM_INFO ../master/master_monitor.sv(27) @ 85: uvm_test_top.tb.m_env.agent.monit
 ------------------------------------------
 Name       Type           Size  Value     
 ------------------------------------------
-mpkt       master_packet  -     @3736     
+mpkt       master_packet  -     @3733     
   PADDR    integral       32    'h67b9c3da
   PWDATA   integral       32    'hbffc15b5
   PWRITE   integral       1     'h1       
@@ -760,7 +722,7 @@ UVM_INFO ../master/master_driver.sv(35) @ 85: uvm_test_top.tb.m_env.agent.driver
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3799                                         
+req                            master_packet  -     @3798                                         
   PADDR                        integral       32    'hc1189aa1                                    
   PWDATA                       integral       32    'hdaddab4d                                    
   PWRITE                       integral       1     'h1                                           
@@ -784,7 +746,7 @@ UVM_INFO ../master/master_monitor.sv(27) @ 115: uvm_test_top.tb.m_env.agent.moni
 ------------------------------------------
 Name       Type           Size  Value     
 ------------------------------------------
-mpkt       master_packet  -     @3670     
+mpkt       master_packet  -     @3790     
   PADDR    integral       32    'hc1189aa1
   PWDATA   integral       32    'hdaddab4d
   PWRITE   integral       1     'h1       
@@ -802,7 +764,7 @@ UVM_INFO ../master/master_driver.sv(35) @ 115: uvm_test_top.tb.m_env.agent.drive
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3789                                         
+req                            master_packet  -     @3661                                         
   PADDR                        integral       32    'hb8cd4723                                    
   PWDATA                       integral       32    'h5707119a                                    
   PWRITE                       integral       1     'h1                                           
@@ -844,7 +806,7 @@ UVM_INFO ../master/master_driver.sv(35) @ 145: uvm_test_top.tb.m_env.agent.drive
 --------------------------------------------------------------------------------------------------
 Name                           Type           Size  Value                                         
 --------------------------------------------------------------------------------------------------
-req                            master_packet  -     @3791                                         
+req                            master_packet  -     @3789                                         
   PADDR                        integral       32    'h9b6d488c                                    
   PWDATA                       integral       32    'h3478489c                                    
   PWRITE                       integral       1     'h1                                           
@@ -867,7 +829,7 @@ UVM_INFO ../master/master_monitor.sv(27) @ 175: uvm_test_top.tb.m_env.agent.moni
 ------------------------------------------
 Name       Type           Size  Value     
 ------------------------------------------
-mpkt       master_packet  -     @3811     
+mpkt       master_packet  -     @3720     
   PADDR    integral       32    'h9b6d488c
   PWDATA   integral       32    'h3478489c
   PWRITE   integral       1     'h1       
@@ -915,4 +877,4 @@ UVM_FATAL :    0
 Simulation complete via $finish(1) at time 200 NS + 45
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.09-s006: Exiting on Jul 18, 2025 at 20:18:08 PKT  (total: 00:00:01)
+TOOL:	xrun(64)	23.09-s006: Exiting on Jul 19, 2025 at 19:28:13 PKT  (total: 00:00:02)
