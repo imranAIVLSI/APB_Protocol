@@ -3,7 +3,7 @@ package slave_pkg;
     import uvm_pkg::*;
     `include "uvm_macros.svh"
 
-    typedef uvm_config_db#(virtual apb_interface) slave_sif_config;
+    typedef uvm_config_db #(virtual apb_interface) slave_sif_config;
 
     `include "slave_packet.sv"
     `include "slave_monitor.sv"

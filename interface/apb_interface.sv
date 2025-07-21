@@ -20,4 +20,18 @@ interface apb_interface #(parameter ADDR_WIDTH = 32,
     logic                        PREADY;    // Slave ready
     logic                        PSLVERR;   // Error response
 
+
+    clocking mcb @(posedge PCLK);
+        default input #0 output #0;
+        output PADDR, PPROT, PSEL, PENABLE,
+                PWRITE, PWDATA,PSTRB,PWAKEUP;
+        input PRDATA, PREADY, PSLVERR
+    endclocking
+
+     clocking scb @(posedge PCLK);
+        default input #0 output #0;
+        input PADDR, PPROT, PSEL, PENABLE,
+                PWRITE, PWDATA,PSTRB,PWAKEUP;
+        output PRDATA, PREADY, PSLVERR
+    endclocking
 endinterface

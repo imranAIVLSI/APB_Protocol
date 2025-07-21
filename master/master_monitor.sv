@@ -1,7 +1,7 @@
 class master_monitor extends uvm_monitor;
     `uvm_component_utils(master_monitor)
 
-    virtual apb_interface mif;
+    virtual apb_interface vif;
 
     function new (string name, uvm_component parent);
         super.new(name , parent);
@@ -11,7 +11,7 @@ class master_monitor extends uvm_monitor;
 //------------------------------------------------------------------------------------------------------ 
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        if (!uvm_config_db #(virtual apb_interface)::get(this, "", "mif", mif)) begin
+        if (!uvm_config_db #(virtual apb_interface)::get(this, "", "vif", vif)) begin
             `uvm_fatal("NOCONFIG", "No master_interface configured for the monitor")
         end
     endfunction
@@ -44,21 +44,21 @@ class master_monitor extends uvm_monitor;
 
 
     task collect_packet(master_packet pkt);
-        @(posedge mif.PCLK);
-        pkt.PADDR = mif.PADDR;
-        pkt.PWDATA = mif.PWDATA;
-        pkt.PSEL = mif.PSEL;
-        pkt.PWRITE = mif.PWRITE;
+        @(posedge vif.PCLK);
+        pkt.PADDR = vif.PADDR;
+        pkt.PWDATA = vif.PWDATA;
+        pkt.PSEL = vif.PSEL;
+        pkt.PWRITE = vif.PWRITE;
 
-        if(mif.PWRITE) begin
+        if(vif.PWRITE) begin
         do begin
-        //  @(posedge mif.PCLK);
-        @(posedge mif.PCLK);
-            pkt.PENABLE = mif.PENABLE;
-            pkt.PREADY = mif.PREADY;
-        end while(!mif.PREADY);
-        @(posedge mif.PCLK);
-        pkt.PENABLE =  mif.PENABLE;
+        //  @(posedge vif.PCLK);
+        @(posedge vif.PCLK);
+            pkt.PENABLE = vif.PENABLE;
+            pkt.PREADY = vif.PREADY;
+        end while(!vif.PREADY);
+        @(posedge vif.PCLK);
+        pkt.PENABLE =  vif.PENABLE;
         end
     endtask
 

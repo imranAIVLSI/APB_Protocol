@@ -11,8 +11,8 @@ module master_top;
     always #5 clk = ~clk;
     apb_interface mif(.PCLK(clk), .PRESET(1'b1));
     initial begin
-        master_mif_config::set(null, "*", "mif", mif);
-        slave_sif_config::set(null, "*", "sif", mif);
+        // master_mif_config::set(null, "*", "mif", mif);
+        uvm_config_db#(virtual apb_interface)::set(null, "*", "vif", mif);
         run_test();
     end
 endmodule 

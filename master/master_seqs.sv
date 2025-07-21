@@ -38,7 +38,8 @@ class test_seq extends master_seqs;
 
     task body();
         repeat(5)begin
-        `uvm_do_with (req, {PWRITE == 1;})
+        `uvm_do_with (req, {PWRITE == 1;
+                            PADDR inside {[0:255]};})
         // `uvm_info(get_type_name(), $sformatf("APB Packet: \n%s", req.sprint()), UVM_MEDIUM)
         end
     endtask

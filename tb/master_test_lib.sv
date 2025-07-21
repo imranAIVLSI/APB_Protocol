@@ -11,6 +11,7 @@ class master_test extends uvm_test;
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         tb=apb_tb::type_id::create("tb", this);
+        uvm_config_int::set(this, "*", "recording_detail", 1);
         uvm_config_db#(uvm_object_wrapper)::set(this, "tb.m_env.agent.sequencer.run_phase", "default_sequence", test_seq::get_type());
     endfunction
 
