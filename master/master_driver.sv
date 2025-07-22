@@ -28,9 +28,14 @@ class master_driver extends uvm_driver #(master_packet);
 // ========================================= RUN TASK PHASE ============================================== 
 //------------------------------------------------------------------------------------------------------ 
   task run_phase(uvm_phase phase);
+        super.run_phase(phase);
+        vif.mcb.PSEL <= 1'b0;
+        vif.mcb.PENABLE <= 1'b0;
+        wait(vif.PRESET);
         // master_packet pkt;
         forever begin
                     seq_item_port.get_next_item(req);
+                    @(posedge vif.PCLK);    
                     `uvm_info(get_type_name, " Driver Run Phase", UVM_HIGH)
                     send_to_slave(req);
                     seq_item_port.item_done(req);
@@ -41,52 +46,38 @@ endtask
 
 // ========================================= REPORT PHASE ============================================== 
 //------------------------------------------------------------------------------------------------------ 
-int first_n=1;
+// int first_n=1;
 
     task send_to_slave(master_packet req);
     
-        @(posedge vif.PCLK);
-
-        vif.mcb.PWRITE  <= req.PWRITE;
+        vif.mcb.PSEL <= 1'b1;
         vif.mcb.PADDR   <= req.PADDR;
-        vif.mcb.PWDATA  <= req.PWDATA;
-        vif.mcb.PENABLE <= 1'b0;
-        `uvm_info(get_type_name(), " Enable low", UVM_LOW)
-       if(vif.mcb.PWRITE)
+        // vif.mcb.PENABLE <= 1'b0;
+       if(req.PWRITE) begin
+            vif.mcb.PWRITE  <= req.PWRITE;
+            `uvm_info(get_type_name(), " write_master low", UVM_LOW)
             write();
-        else
+       end
+        else if(!req.PWRITE) begin
+            vif.mcb.PWRITE  <= req.PWRITE;
             read();
-        // if(vif.mcb.PWRITE) begin
-        //     do begin
-        //         @(posedge vif.mcb.PCLK);
-        //         vif.mcb.PENABLE <= 1'b1;
-        //         //  vif.mcb.PREADY <= 1'b1;
-        //     end while(!vif.mcb.PREADY);
-
-        //      @(posedge vif.mcb.PCLK);
-        //      vif.mcb.PENABLE <= 1'b0;
-        //     vif.mcb.PWRITE <= 1'b0;
-        //     vif.mcb.PSEL <= 1'b0;
-        //     // #1;
-        // end
+        end
     endtask
 
     function void report_phase(uvm_phase phase);
         `uvm_info(get_type_name(), "Master driver simulation complete", UVM_LOW)
         `uvm_info(get_type_name(), $sformatf("Master Driver Packets Sent: %0d", pkts_sent), UVM_LOW)
         `uvm_info(get_type_name(), $sformatf("Master Driver Write Packets: %0d", write_pkts), UVM_LOW)
+        `uvm_info(get_type_name(), $sformatf("Master Driver Read Packets: %0d", read_pkts), UVM_LOW)
     endfunction
 
     task write();
         write_pkts++;
-        req.PSEL    = 1'b1;
-        vif.PSEL    <= req.PSEL;
+        vif.mcb.PWDATA  <= req.PWDATA;
         @(posedge vif.PCLK);
-        
             vif.PENABLE <= 1'b1;
-             `uvm_info(get_type_name(), " Enable high", UVM_LOW)
+            // vif.PREADY <= 1'b1;
         @(vif.mcb.PREADY);
-          `uvm_info(get_type_name(), " master Pready high", UVM_LOW)
         @(posedge vif.PCLK);
         vif.mcb.PWRITE <= 1'b0;
         vif.mcb.PENABLE <= 1'b0;
@@ -95,11 +86,11 @@ int first_n=1;
 
     task read();
         read_pkts++;
-        req.PSEL    = 1'b1;
-        vif.mcb.PSEL    <= req.PSEL;
         @(posedge vif.PCLK);
             vif.mcb.PENABLE <= 1'b1;
         wait(vif.mcb.PREADY);
+        req.PRDATA <= vif.mcb.PRDATA;
+        @(posedge vif.PCLK);
         vif.mcb.PENABLE <= 1'b0;
         vif.mcb.PSEL <= 1'b0;
     endtask

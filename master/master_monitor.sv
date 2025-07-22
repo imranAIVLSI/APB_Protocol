@@ -20,6 +20,7 @@ class master_monitor extends uvm_monitor;
 //------------------------------------------------------------------------------------------------------ 
     task run_phase(uvm_phase phase);
             `uvm_info("MASTER_MONITOR", "Run Phase started", UVM_LOW)
+            wait(vif.PRESET);
             forever begin
                 master_packet mpkt;
                 mpkt = master_packet::type_id::create("mpkt");
@@ -45,21 +46,25 @@ class master_monitor extends uvm_monitor;
 
     task collect_packet(master_packet pkt);
         @(posedge vif.PCLK);
+        wait(vif.PSEL );
+        @(posedge vif.PENABLE);
+        #1ns;
         pkt.PADDR = vif.PADDR;
         pkt.PWDATA = vif.PWDATA;
         pkt.PSEL = vif.PSEL;
         pkt.PWRITE = vif.PWRITE;
+        pkt.PRDATA = vif.PRDATA;
+        pkt.PENABLE = vif.PENABLE;
 
-        if(vif.PWRITE) begin
+        // if(vif.PWRITE) begin
         do begin
-        //  @(posedge vif.PCLK);
+        //  @(posedge vifPCLK);
         @(posedge vif.PCLK);
-            pkt.PENABLE = vif.PENABLE;
-            pkt.PREADY = vif.PREADY;
         end while(!vif.PREADY);
-        @(posedge vif.PCLK);
-        pkt.PENABLE =  vif.PENABLE;
-        end
+        pkt.PREADY = vif.PREADY;
+        // @(posedge vif.PCLK);
+        // pkt.PENABLE =  vif.PENABLE;
+        // end
     endtask
 
 endclass

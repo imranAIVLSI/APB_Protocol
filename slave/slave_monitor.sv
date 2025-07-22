@@ -14,6 +14,10 @@ class slave_monitor extends uvm_monitor;
             `uvm_fatal("NOCONFIG", "No slave interface configured for monitor")
     endfunction
 
+    // task run_phase(uvm_phase phase);
+    //     // wait(vif.PRESET);
+    // endtask 
+
     function void start_of_simulation_phase(uvm_phase phase);
         super.start_of_simulation_phase(phase);
         `uvm_info(get_type_name(), "Running Simulation: SLAVE monitor" , UVM_HIGH)

@@ -7,11 +7,11 @@ class apb_tb extends uvm_env;
 
     master_env m_env;
     slave_env s_env;
-    task run_phase(uvm_phase phase);
-        phase.raise_objection(this, "Starting Sequence....");
-        #200ns;
-        phase.drop_objection(this, "sequence complete");
-    endtask
+    // task run_phase(uvm_phase phase);
+    //     phase.raise_objection(this, "Starting Sequence....");
+    //     #200ns;
+    //     phase.drop_objection(this, "sequence complete");
+    // endtask
 
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);

@@ -34,4 +34,16 @@ interface apb_interface #(parameter ADDR_WIDTH = 32,
                 PWRITE, PWDATA,PSTRB,PWAKEUP;
         output PRDATA, PREADY, PSLVERR
     endclocking
+
+    modport master (
+        output PADDR, PPROT, PSEL, PENABLE,
+                PWRITE, PWDATA,PSTRB,PWAKEUP,
+        input PRDATA, PREADY, PSLVERR
+    );
+
+    modport slave (
+        input PADDR, PPROT, PSEL, PENABLE,
+                PWRITE, PWDATA,PSTRB,PWAKEUP,
+        output PRDATA, PREADY, PSLVERR 
+    );
 endinterface

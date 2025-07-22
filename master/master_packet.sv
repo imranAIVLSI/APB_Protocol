@@ -2,7 +2,7 @@ class master_packet extends uvm_sequence_item ;
     parameter ADDR_WIDTH = 32;
     parameter DATA_WIDTH = 32;
     rand bit [DATA_WIDTH-1:0]   PWDATA;
-    rand bit [DATA_WIDTH-1:0]   PADDR;
+    randc bit [DATA_WIDTH-1:0]   PADDR;
     rand bit                    PWRITE;
     bit [2:0]                   PPROT;     // Protection attributes
     bit                         PSEL;     // Select slave
@@ -15,7 +15,7 @@ class master_packet extends uvm_sequence_item ;
     bit                        PREADY;    // Slave ready
     bit                        PSLVERR;   // Error response
     
-
+constraint wdata { PWDATA inside {[1:100]};}
 
     `uvm_object_utils_begin(master_packet)
         `uvm_field_int(PADDR, UVM_ALL_ON)

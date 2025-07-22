@@ -37,11 +37,28 @@ class test_seq extends master_seqs;
     endfunction
 
     task body();
-        repeat(5)begin
         `uvm_do_with (req, {PWRITE == 1;
-                            PADDR inside {[0:255]};})
+                            PADDR == 32'h0;})
+        `uvm_info(get_type_name(), "sequence 1", UVM_MEDIUM)
+        `uvm_do_with (req, {PWRITE == 1;
+                            PADDR == 32'h1;})
+        `uvm_info(get_type_name(), "sequence 2", UVM_MEDIUM)
+        `uvm_do_with (req, {PWRITE == 1;
+                            PADDR == 32'h2;})
+        `uvm_info(get_type_name(), "sequence 3", UVM_MEDIUM)
+        // `uvm_do_with (req, {PWRITE == 0;
+        //                     PADDR == 32'h0;})
+        // `uvm_info(get_type_name(), "sequence 4", UVM_MEDIUM)
+        // `uvm_do_with (req, {PWRITE == 0;
+        //                     PADDR == 32'h1;})
+        // `uvm_info(get_type_name(), "sequence 5", UVM_MEDIUM)
+        // `uvm_do_with (req, {PWRITE == 0;
+        //                     PADDR == 32'h2;})
+        // `uvm_info(get_type_name(), "sequence 6", UVM_MEDIUM)
+        // `uvm_do_with (req, {PWRITE == 0;
+        //                     PADDR == 32'b1;})
+        // `uvm_info(get_type_name(), "sequence 7", UVM_MEDIUM)
         // `uvm_info(get_type_name(), $sformatf("APB Packet: \n%s", req.sprint()), UVM_MEDIUM)
-        end
     endtask
 
 endclass: test_seq

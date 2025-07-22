@@ -18,6 +18,7 @@ class slave_driver extends uvm_driver#(slave_packet);
     endfunction
 
     task run_phase(uvm_phase phase);
+        wait(vif.PRESET);
         forever begin
             slave_packet pkt;
             @(posedge vif.PCLK);
@@ -25,25 +26,42 @@ class slave_driver extends uvm_driver#(slave_packet);
             pkt.PADDR = vif.scb.PADDR;
             pkt.PWDATA = vif.scb.PWDATA;
             pkt.PWRITE = vif.scb.PWRITE;
-            if(vif.PSEL ) begin
-                @(posedge vif.PENABLE);
-                `uvm_info(get_type_name(), " slave Enable high", UVM_LOW)
-                pkt.PSEL = vif.PSEL;
-                pkt.PENABLE = vif.PENABLE;
-                // `uvm_info(get_type_name(), "slave driver select enable true condition", UVM_LOW)
-               // @(posedge vif.PCLK);
-                //@(posedge vif.PCLK);
-                vif.PREADY = 1'b1;
-                `uvm_info(get_type_name(), "slave Pready high", UVM_LOW)
-                memory[pkt.PADDR] = pkt.PWDATA;
-                pkt.PREADY = vif.PREADY;
-                @(posedge vif.PCLK);
-                vif.scb.PREADY <= 1'b0;
-                #1ns;
-                // if(!vif.scb.PENABLE)
+            if(vif.scb.PWRITE) begin
+                if(vif.scb.PSEL) begin
+                    @(posedge vif.scb.PENABLE);
+                    pkt.PSEL = vif.scb.PSEL;
+                    pkt.PENABLE = vif.scb.PENABLE;
+                    vif.scb.PREADY <= 1'b1;
+                    memory[pkt.PADDR] = pkt.PWDATA;
+                    pkt.PREADY = vif.scb.PREADY;
+                    @(posedge vif.PCLK);
+                    vif.scb.PREADY <= 1'b0;
+                    // #1ns;
+                    // if(!vif.slave.PENABLE)
+                end
+                else
+                    vif.scb.PREADY <= 1'b0;
             end
-            else
-                vif.PREADY <= 1'b0;
+            else if(!vif.scb.PWRITE)begin
+                if(vif.scb.PSEL) begin
+                    @(posedge vif.scb.PENABLE);
+                    pkt.PSEL = vif.scb.PSEL;
+                    pkt.PENABLE = vif.scb.PENABLE;
+                    vif.scb.PREADY <= 1'b1;
+                    // #1ns;
+                    vif.scb.PRDATA <= memory[pkt.PADDR];
+                    // vif.slave.PRDATA <= 32'b10;
+                    pkt.PRDATA = memory[pkt.PADDR];
+                    pkt.PREADY = vif.scb.PREADY;
+                    @(posedge vif.PCLK);
+                    vif.scb.PREADY <= 1'b0;
+                    // #1ns;
+                    // if(!vif.scbslave.PENABLE)
+                end
+                else
+                    vif.scb.PREADY <= 1'b0;
+            
+            end
 
 
         `uvm_info(get_type_name(), $sformatf("APB slave Packet: \n%s", pkt.sprint()), UVM_MEDIUM)
